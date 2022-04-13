@@ -3,6 +3,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 // import './bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// 安装bootstrap 的方法， 下载 因为bootstrap 引用了其他的格式，所以不能直接引用，需要转换
+// https://react-bootstrap.github.io/getting-started/introduction/
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, HashRouter } from 'react-router-dom'

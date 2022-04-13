@@ -8,9 +8,9 @@ export default class News extends Component {
             <div>
 
                 <ul>
-                    <li>news001</li>
-                    <li>news002</li>
-                    <li>news003</li>
+                    <li>News001</li>
+                    <li>News002</li>
+                    <li>News003</li>
                 </ul>
             </div>
         )
