@@ -59,8 +59,6 @@ export default function Detail() {
 
     });
 
-    // console.log(findContent)
-
     return (
         <ul>
             <li> <SmileTwoTone />  ID :  {params.id}</li>
