@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Routes, Route, useParams } from "react-router-dom";
 import { Space } from 'antd';
 import { SmileTwoTone, HeartTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
+import { Input, Button, List, Typography, Divider } from 'antd';
 
 
 
@@ -45,6 +46,14 @@ import { SmileTwoTone, HeartTwoTone, CheckCircleTwoTone } from '@ant-design/icon
 // }
 
 
+const data = [
+    'Racing car sprays burning fuel into crowd.',
+    'Japanese princess to wed commoner.',
+    'Australian walks 100km after outback crash.',
+    'Man charged over missing wedding girl.',
+    'Los Angeles battles huge wildfires.',
+];
+
 
 export default function Detail() {
     let params = useParams();
@@ -63,12 +72,36 @@ export default function Detail() {
     });
 
     return (
-        <ul>
-            <li> <SmileTwoTone />  ID :  {params.id}</li>
-            <li>    <HeartTwoTone twoToneColor="#eb2f96" />  TITLE :  {params.title}</li>
-            <li>    <CheckCircleTwoTone twoToneColor="#52c41a" />    CONTENT :  {findContent.content}</li>
+        <div>
+            <div>
+                <Input placeholder="Basic usage" />
+                <Button type="primary">Primary Button</Button>
+                <br />                <br />
 
-        </ul>
+                <Divider orientation="left">Default Size</Divider>
+                <br />
+
+                <List
+
+                    bordered
+                    dataSource={data}
+                    renderItem={item => (
+                        <List.Item>
+                            <Typography.Text mark>[ITEM]</Typography.Text> {item}
+                        </List.Item>
+                    )}
+                />
+                <br />
+
+            </div>
+
+            <ul>
+                <li> <SmileTwoTone />  ID :  {params.id}</li>
+                <li>    <HeartTwoTone twoToneColor="#eb2f96" />  TITLE :  {params.title}</li>
+                <li>    <CheckCircleTwoTone twoToneColor="#52c41a" />    CONTENT :  {findContent.content}</li>
+
+            </ul>
+        </div>
 
     )
 }
