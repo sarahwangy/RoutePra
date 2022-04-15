@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
-import Detail from './Detail/detail';
+import { Loading3QuartersOutlined } from '@ant-design/icons';
+import React, { Component, lazy, Suspense } from 'react'
+// import Detail from './Detail/detail';
 import { NavLink, Link, Route, Routes, Switch, Navigate } from 'react-router-dom'
 
+
+
+const Detail = lazy(() => import('./Detail/detail'))
 
 // export default class Message extends Component {
 //     state = {
@@ -108,12 +112,13 @@ export default function Message() {
                     }
 
                     <hr />
+                    <Suspense fallback={"Loading...detail"}>
+                        <Routes>
 
-                    <Routes>
+                            <Route path=":detail/:id/:title" element={<Detail />} />
 
-                        <Route path=":detail/:id/:title" element={<Detail />} />
-
-                    </Routes>
+                        </Routes>
+                    </Suspense>
 
                 </ul>
             </div>

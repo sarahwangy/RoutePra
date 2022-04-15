@@ -48,7 +48,7 @@ import Message from './message'
 // }
 
 
-const UsePathContext = createContext();
+// const UsePathContext = createContext();
 
 export default function Home() {
     // const [path, setPath] = useState({
